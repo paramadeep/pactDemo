@@ -1,7 +1,9 @@
 import axios from 'axios'
 
+const debitCardServicePort = process.env.DEBIT_SERVICE_PORT || 9410
+
 const makePayment = (amount, cardNo) => axios
-    .post('http://localhost:9410/pay', {amount, cardNo})
+    .post(`http://localhost:${debitCardServicePort}/pay`, {amount, cardNo})
     .then(res => {
         console.log(`statusCode: ${res.status}`)
         if(res.status == 200){

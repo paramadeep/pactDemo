@@ -10,12 +10,14 @@
     "nodemon": "^2.0.15"
   },
   "dependencies": {
+    "@pact-foundation/pact": "^9.17.3",
     "axios": "^0.26.1",
     "express": "^4.17.3"
   },
   "scripts": {
     "runPOS": "babel-node posClient/index.js",
     "runCards": "babel-node debitCardService/index.js",
-    "runAccounts": "babel-node accountsService/index.js"
+    "runAccounts": "babel-node accountsService/index.js",
+    "genPOSPact": "DEBIT_SERVICE_PORT=2347 babel-node posClient/consumerPacts/index.js"
   }
 }
