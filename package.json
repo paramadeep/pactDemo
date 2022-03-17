@@ -15,6 +15,7 @@
   },
   "scripts": {
     "runPOS": "babel-node posClient/index.js",
-    "runCards": "babel-node debitCardService/index.js"
+    "runCards": "babel-node debitCardService/index.js",
+    "runAccounts": "babel-node accountsService/index.js"
   }
 }

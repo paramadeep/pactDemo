@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const makePayment = (amount, cardNo) => axios
+const makePayment = (amount, cardNo) => axios
     .post('http://localhost:9410/pay', {amount, cardNo})
     .then(res => {
         console.log(`statusCode: ${res.status}`)
@@ -9,6 +9,7 @@ export const makePayment = (amount, cardNo) => axios
         } else {
             throw "Payment Failed"
         }
-        // console.log(res)
     })
     .catch(console.error)
+
+export default  {makePayment}
