@@ -15,9 +15,10 @@
     "express": "^4.17.3"
   },
   "scripts": {
-    "runPOS": "babel-node posClient/index.js",
+    "runATM": "babel-node atmClient/index.js",
     "runCards": "babel-node debitCardService/index.js",
     "runAccounts": "babel-node accountsService/index.js",
-    "genPOSPact": "DEBIT_SERVICE_PORT=2347 babel-node posClient/consumerPacts/index.js"
+    "genPOSPact": "DEBIT_SERVICE_PORT=2347 babel-node atmClient/consumerPacts/index.js",
+    "verifyCardsPacts": "babel-node debitCardService/providerVerification/index.js"
   }
 }

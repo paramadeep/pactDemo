@@ -4,7 +4,7 @@ import debitCardClient from "../debitCardClient";
 process.env.DEBIT_SERVICE_PORT = "2347"
 
 const provider = new Pact({
-    consumer: "POS",
+    consumer: "ATM",
     provider: "DebitCardService",
     port:  2347,
     logLevel: "INFO",
@@ -15,6 +15,7 @@ const opts = {
     pactBroker: 'http://localhost:8080',
     pactFilesOrDirs: [`./pacts/`],
     consumerVersion: '1',
+    tags: 'main'
     // verbose: true,
     // logLevel: 'trace',
 };
@@ -26,7 +27,6 @@ then(()=> provider.addInteraction({
     withRequest: {
         method: "POST",
         path: "/pay",
-        // headers: { Accept: "application/json" },
         body: {
             amount: 100,
             cardNo: 420007
@@ -34,7 +34,7 @@ then(()=> provider.addInteraction({
     },
     willRespondWith: {
         status: 200,
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json; charset=utf-8" },
         body: {
             paymentStatus: true
         },

@@ -1,7 +1,7 @@
 import debitCardClient from './debitCardClient'
 
 
-console.log('Welcome to POS client')
+console.log('Welcome to ATM client')
 
 
 const payByDebitCard = (amount,cardNo) => {
