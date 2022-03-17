@@ -6,6 +6,7 @@ const app = express()
 app.use(express.json())
 
 app.post('/pay',(req,res)=>{
+    console.log(req)
     let cardNo = req.body.cardNo;
     let amount = req.body.amount;
     console.log(`Processing payments for card ${cardNo} for amount of ${amount}`)

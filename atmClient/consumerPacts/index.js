@@ -30,7 +30,8 @@ then(()=> provider.addInteraction({
         body: {
             amount: 100,
             cardNo: 420007
-        }
+        },
+        headers: { Accept: "application/json, text/plain, */*" },
     },
     willRespondWith: {
         status: 200,
