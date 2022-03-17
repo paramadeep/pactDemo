@@ -1,0 +1,20 @@
+{
+  "name": "pact-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.17.7",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "axios": "^0.26.1",
+    "express": "^4.17.3"
+  },
+  "scripts": {
+    "runPOS": "babel-node posClient/index.js",
+    "runCards": "babel-node debitCardService/index.js"
+  }
+}
